@@ -1,5 +1,5 @@
 ##System installer
-[![npm](https://img.shields.io/npm/v/npm.svg?maxAge=2592000)]()
+[![GitHub release](https://img.shields.io/github/release/qubyte/rubidium.svg?maxAge=2592000&label=dupa)]()
 
 -----------------
 This script allows to do simple installation. Basically, it provides picking of data like charset, default language or database connection.
