@@ -1,5 +1,5 @@
 ##System installer
-[![GitHub release](https://img.shields.io/github/release/qubyte/rubidium.svg?maxAge=2592000&label=dupa)]()
+[![GitHub release](https://img.shields.io/github/release/qubyte/rubidium.svg?maxAge=2592000&label=version&style=1.0)]()
 
 -----------------
 This script allows to do simple installation. Basically, it provides picking of data like charset, default language or database connection.
