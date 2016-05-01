@@ -6,11 +6,9 @@ This script allows to do simple installation. Basically, it provides picking of 
 Script can be easily developed by editing few files. Although, it requires some configurations from system's author. 
 
 ### Additonal notes
-----------
 Programmer ought to create script, that removes all unnecessary directories and files of system installer.
 
 ### Files of the script
------------------
 1. index.php
 2. .htaccess
 3. php/ directory
