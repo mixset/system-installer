@@ -1,4 +1,5 @@
 ##System installer
+[![npm](https://img.shields.io/npm/v/npm.svg?maxAge=2592000)]()
 
 -----------------
 This script allows to do simple installation. Basically, it provides picking of data like charset, default language or database connection.
