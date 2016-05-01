@@ -1,0 +1,5 @@
+Options +FollowSymLinks
+
+RewriteEngine On
+
+RewriteRule ^step-([A-Za-z]+) index.php?step=$1 [L]

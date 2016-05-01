@@ -1,0 +1,209 @@
+/**
+ * Basic styles for installing system
+ * Created by Dominik Ryńko
+ * Buttons come from http://css3buttongenerator.com/
+*/
+* {
+    margin: 0 auto;
+    padding: auto;
+}
+
+@font-face {
+    font-family: 'Armata';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Armata'), local('Armata-Regular'), url(http://themes.googleusercontent.com/static/fonts/armata/v4/w27wif_q95nkRqADjVBFpg.woff) format('woff');
+}
+
+html {
+    background: white;
+}
+
+body {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #3498db;
+}
+
+.btn {
+    background: #3498db;
+    background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+    background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+    background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+    background-image: -o-linear-gradient(top, #3498db, #2980b9);
+    background-image: linear-gradient(to bottom, #3498db, #2980b9);
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    margin: 0 auto;
+}
+
+.btn:hover {
+    background: #3cb0fd;
+    background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.hr-style {
+    border: 0;
+    height: 1px;
+    background: #333 linear-gradient(to right, #ccc, #333, #ccc);
+}
+
+.header {
+    width: 960px;
+    height: 100px;
+    margin-bottom: 15px;
+}
+
+.header h1 {
+    text-align: center;
+    padding-top: 25px;
+    font-family: 'Armata', sans-serif;
+}
+
+.left-side {
+    width: 300px;
+    float: left;
+    height: 400px;
+    margin-top: 20px;
+    border-right: 1px solid grey;
+}
+
+.left-side h2 {
+    text-align: center;
+    font-family: 'Armata', sans-serif;
+    font-size: 17px;
+}
+
+.left-side ul {
+    list-style: none;
+    padding: 20px 0 0 0;
+}
+
+.left-side li {
+    line-height: 30px;
+    text-align: center;
+}
+
+.left-side li span {
+    text-decoration: underline;
+}
+
+.right-side {
+    width: 690px;
+    float: right;
+    height: 300px;
+    margin-top: 20px;
+}
+
+.right-side h2 {
+    text-align: center;
+    font-family: 'Armata', sans-serif;
+    font-size: 17px;
+}
+
+.right-side p {
+    text-align: center;
+    padding: 10px 10px 10px 20px;
+}
+
+/* Global styles for forms */
+form {
+    width: 90%;
+}
+
+form fieldset {
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+legend {
+    font-size: 15px;
+    text-align: center;
+    padding: 5px 3px 5px 3px;
+    width: 30%;
+    margin: 0 34.6%;
+
+}
+
+form dl {
+    text-align: center;
+}
+
+
+form dl dt {
+    padding: 30px 0 5px 0;
+    font-size: 18px;
+}
+
+form select{
+    width: 200px;
+    text-align: center;
+    padding: 5px 0 5px 0;
+}
+
+form select option {
+    padding: 5px 0 5px 0;
+}
+
+form input[type=text], form input[type=password] {
+    display: block;
+    width: 200px;
+    padding: 10px;
+}
+
+form input[type=submit] {
+    border: none;
+    display: block;
+}
+
+form input[type=submit]:hover {
+    cursor: pointer;
+}
+
+::-webkit-input-placeholder {
+    text-align:center;
+}
+
+:-moz-placeholder {
+    text-align:center;
+}
+
+::-moz-placeholder {
+    text-align:center;
+}
+
+:-ms-input-placeholder {
+    text-align: center;
+}
+
+/* Basic part form styles */
+.chars-encoding select {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.other-encoding-field {
+    display: none;
+}
+
