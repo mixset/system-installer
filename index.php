@@ -36,7 +36,7 @@ session_start();
     include $installerFile;
 
     try {
-        // Od PHP7 można zapisać: $step = isset($_GET['step']) ?? 'start';
+        // Od PHP7 można zapisać: $step = $_GET['step'] ?? 'start';
         $step = isset($_GET['step']) ? $_GET['step'] : 'start';
 
         $config = new Config\Config;
