@@ -24,6 +24,13 @@ class Installer
     ];
 
     /**
+     * @var array
+     */
+    private $notifications = [
+        0 => 'Uzupełnij wszystkie pola formularza'
+    ];
+
+    /**
      * @param $object
      */
     public function __construct($object)
@@ -107,8 +114,7 @@ class Installer
 
         $this -> config['class'] -> init($fullPath);
 
-        return true;
-
+        return null;
     }
 
     /**
@@ -139,7 +145,7 @@ class Installer
         $result[1] = $this->config['class'] -> setConfig('debug', $debug);
         $result[2] = $this->config['class'] -> setConfig('encoding', $encoding);
 
-        return (in_array(false, $result)) ? false : true;
+        return in_array(false, $result);
     }
 
     /**
@@ -149,7 +155,7 @@ class Installer
     public function database(array $data)
     {
         if (empty($data['database_name']) || empty($data['user_name']) || empty($data['host_name']) || empty($data['prefix'])) {
-            return 'Uzupełnij wszystkie pola formularza';
+            return $this -> notifications[0];
         } else {
             $this -> config['class'] -> createArray('database');
             $data = array_map('strip_tags', $data);
@@ -160,7 +166,7 @@ class Installer
             $result[3] = $this->config['class'] -> setConfig('host', $data['host_name']);
             $result[4] = $this->config['class'] -> setConfig('prefix', $data['prefix']);
 
-            return (in_array(false, $result)) ? false : true;
+            return in_array(false, $result);
         }
     }
 }

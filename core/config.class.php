@@ -1,9 +1,6 @@
 <?php
 /**
- @Author: Dominik Ryńko
- @Website: http://www.rynko.pl/
- @Version: 1.0
- @Contact: http://www.rynko.pl/kontakt
+ @Author: Dominik Ryńko <http://rynko.pl/>
 */
 
 namespace Config;
@@ -73,7 +70,7 @@ class Config
                 $text .= $name . ' = ' . ($value == true) ? "true" : "false";
             }
 
-            if (!file_put_contents($this->file, $text . PHP_EOL, FILE_APPEND)) {
+            if (!(file_put_contents($this->file, $text . PHP_EOL, FILE_APPEND) === false)) {
                 throw new \Exception('There was a problem with adding new data to file.');
             } else {
                 return true;
@@ -114,7 +111,7 @@ class Config
     {
         $config = parse_ini_file($file);
 
-        return array_key_exists($key, $config) ? true : false;
+        return array_key_exists($key, $config);
     }
 
     /**
@@ -129,7 +126,5 @@ class Config
         } else {
             return null;
         }
-
-
     }
 }

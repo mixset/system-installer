@@ -28,8 +28,8 @@ session_start();
   <section class="right-side">
   <?php
 
-  $installerFile = 'php/installer.class.php';
-  $configFile = 'php/config.class.php';
+  $installerFile = 'core/installer.class.php';
+  $configFile = 'core/config.class.php';
 
   if (file_exists($installerFile) && filesize($installerFile) !== 0 && file_exists($configFile) && filesize($configFile) !== 0) {
     include $configFile;
@@ -42,7 +42,7 @@ session_start();
         $config = new Config\Config;
         $installer = new Installer\Installer($config);
 
-        echo $installer -> route($step);
+        $installer -> route($step);
     } catch(Exception $e) {
         echo '<h2 style="text-align:center;">'.$e -> getMessage().'</h2>';
     }

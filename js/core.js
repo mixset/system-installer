@@ -1,6 +1,6 @@
 /**
  * Setting encoding by using input[type=text]
- * Make sure, it is corrent subpage
+ * Make sure, it is correct subpage
  * Created by Dominik Ryńko
  * Last modification: 01-05-2016
 */

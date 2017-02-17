@@ -5,7 +5,7 @@ if (isset($_POST['send_request']) && $params[0] == 'step' && $params[1] == 'basi
     $result = $installer -> basic($_POST);
 
     // If everything went well, show next form
-    if ($result == true) {
+    if ($result) {
         showForm($installer);
     }
 }
