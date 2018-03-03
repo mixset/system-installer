@@ -14,3 +14,9 @@ Changelog
 [17.02.2017] - v1.1
 - changed name of directory: `php` -> `core`
 - code optimization 
+
+[03.03.2018] - v1.2
+- Separate steps into class, based on factory strategy
+- code separation 
+- better project structure
+- PSR improvements
