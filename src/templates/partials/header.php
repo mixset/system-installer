@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Instalator systemu</title>
-    <link rel="stylesheet" href="src/templates/assets/css/style.css">
+    <link rel="stylesheet" href="<?=ASSETS_PATH?>css/style.css">
 </head>
 <body>
 <header class="header">
@@ -16,17 +16,17 @@
     <nav>
         <ul>
             <?php
+            echo '<li>' . (empty($_GET['step']) ?  '<span>' . Helpers::getMenu()['start'] . '</span>' : Helpers::getMenu()['start']) . '</li>';
+
             foreach (Helpers::getMenu() as $key => $value):
-            ?>
-                <li><?php ((isset($_GET['step']) && $_GET['step'] === $key) ? '<span>' . $value . '</span>' : $value); ?></li>
-            <?php
+                if ($key === 'start') {
+                    continue;
+                }
+
+                echo '<li>' . (isset($_GET['step']) && $_GET['step'] === $key ? '<span>' .$value. '</span>' : $value) . '</li>';
             endforeach;
             ?>
-
-            <li><?php echo (isset($_GET['step']) && $_GET['step'] == 'basic') ? '<span>Pierwszy krok</span>' : 'Pierwszy krok'; ?></li>
-            <li><?php echo (isset($_GET['step']) && $_GET['step'] == 'database') ? '<span>Baza danych</span>' : 'Baza danych'; ?></li>
-            <li><?php echo (isset($_GET['step']) && $_GET['step'] == 'finish') ? '<span>Krok finalny</span>' : 'Krok finalny'; ?></li>
-        </ul>
+     </ul>
     </nav>
 </section>
 
