@@ -12,16 +12,11 @@ abstract class Step implements StepInterface
     protected $config;
 
     /**
-     * File, where config data will be saved
-    */
-    const CONFIG_PATH = 'src/config/config.ini';
-
-    /**
      * Initialize basic stuff
     */
     public function __construct()
     {
         $this->config = new Config();
-        $this->config->init(self::CONFIG_PATH);
+        $this->config->init(CONFIG_PATH . CONFIG_FILE);
     }
 }

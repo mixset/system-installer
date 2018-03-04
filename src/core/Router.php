@@ -13,7 +13,7 @@ class Router
         if (!is_string($step) || is_null($step)) {
             throw new \Exception('$step variable must be INT type and cannot be NULL!');
         } else {
-            $pathToFile = 'src/templates/' . $step . '.php';
+            $pathToFile = TEMPLATES_PATH . $step . APP_PHP;
 
             if (file_exists($pathToFile) && filesize($pathToFile) !== 0) {
                 include $pathToFile;

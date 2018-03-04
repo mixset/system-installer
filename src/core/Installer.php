@@ -2,8 +2,8 @@
 
 namespace Installer;
 
-require_once 'src/steps/StepInterface.php';
-require_once 'src/steps/Step.php';
+require_once STEPS_PATH . 'StepInterface' . APP_PHP;
+require_once STEPS_PATH . 'Step' . APP_PHP;
 
 /**
  * Class Installer
@@ -11,16 +11,6 @@ require_once 'src/steps/Step.php';
 */
 class Installer
 {
-    /**
-     * Config.ini paths
-     *
-     * @var array
-    */
-    private $config = [
-        'path' => 'src/config/',
-        'fileName' => 'config.ini'
-    ];
-
     /**
      * Steps of install form
      *
@@ -54,7 +44,7 @@ class Installer
     {
         if (empty($_POST) === false && (int)$_POST['request'] === 1) {
             $params = \Helpers::getPathData();
-            require_once 'src/steps/' . $params[1] . '.php';
+            require_once STEPS_PATH . $params[1] . APP_PHP;
 
             $class = $this->steps[$params[1]]['class'];
             return (new $class)->save($_POST);
@@ -68,8 +58,8 @@ class Installer
     */
     private function initFile()
     {
-        $dir = $this->config['path'];
-        $fullPath = $dir . $this->config['fileName'];
+        $dir = CONFIG_PATH;
+        $fullPath = $dir . CONFIG_FILE;
 
         if (empty($_SESSION['init_app'])) {
             // Check, whether directory exists. If not, create it and add necessary chmod

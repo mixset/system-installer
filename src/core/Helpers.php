@@ -22,7 +22,7 @@ class Helpers
         list($uSec, $sec) = explode(' ', microtime());
         srand((float)$sec + ((float)$uSec * 100000));
 
-        $validChars = "abcdfghjkmnpqrstvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        $validChars = 'abcdfghjkmnpqrstvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
         $code = '';
         $counter = 0;
