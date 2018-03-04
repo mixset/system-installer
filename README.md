@@ -1,4 +1,4 @@
-#System installer
+# System installer
 
 ## Description
 This script allows to do simple installation. Basically, it provides picking of data like charset, default language or database connection.
@@ -7,7 +7,7 @@ Script can be easily developed by editing few files. Although, it requires some 
 ## Additional notes
 Programmer ought to create script, that removes all unnecessary directories and files of system installer.
 
-Changelog
+## Changelog
 [02-05-2016] - v1.0
 + Project has been released
 
@@ -20,3 +20,8 @@ Changelog
 - code separation 
 - better project structure
 - PSR improvements
+
+## ToDo
+- rewrite layout
+- ability to download config.ini file from final step
+- language support
