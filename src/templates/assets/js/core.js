@@ -18,7 +18,7 @@ if (document.getElementById("other-encoding") != null && document.getElementsByC
 
     checkbox.addEventListener('click', function() {
         if (checkbox.checked == true) {
-            default_encoding.style.display = 'none';
+           // default_encoding.style.display = 'none';
             input[0].style.display = 'block';
         } else {
             default_encoding.style.display = 'block';
