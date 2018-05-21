@@ -1,6 +1,6 @@
 <?php
 
-namespace Installer;
+namespace SystemInstaller;
 
 require_once STEPS_PATH . 'StepInterface' . APP_PHP;
 require_once STEPS_PATH . 'Step' . APP_PHP;
@@ -20,7 +20,7 @@ class Installer
 
     /**
      * Installer constructor.
-    */
+     */
     public function __construct()
     {
         $this->initFile();
@@ -32,7 +32,7 @@ class Installer
     */
     public function loadSteps()
     {
-        $this->steps = (new \StepsList())->steps;
+        $this->steps = (new StepsList())->steps;
     }
 
     /**
@@ -43,7 +43,7 @@ class Installer
     public function installManager()
     {
         if (empty($_POST) === false && (int)$_POST['request'] === 1) {
-            $params = \Helpers::getPathData();
+            $params = Helpers::getPathData();
             require_once STEPS_PATH . $params[1] . APP_PHP;
 
             $class = $this->steps[$params[1]]['class'];

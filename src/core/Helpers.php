@@ -1,5 +1,11 @@
 <?php
 
+namespace SystemInstaller;
+
+/**
+ * Class Helpers
+ * @package SystemInstaller
+*/
 class Helpers
 {
     /**
@@ -10,6 +16,7 @@ class Helpers
     {
         $url = explode('/', parse_url($_SERVER['HTTP_REFERER'])['path']);
         $url = end($url);
+
         return explode('-', $url);
     }
 
@@ -40,14 +47,14 @@ class Helpers
     */
     public static function getMenu()
     {
-        $list = (new StepsList())->steps;
+        $stepsList = (new StepsList())->steps;
 
-        $menu = [];
+        $menuItems = [];
 
-        foreach ($list as $key => $value) {
-            $menu[$key] = $value['label'];
+        foreach ($stepsList as $key => $value) {
+            $menuItems[$key] = $value['label'];
         }
 
-        return $menu;
+        return $menuItems;
     }
 }

@@ -1,5 +1,11 @@
 <?php
 
+namespace SystemInstaller;
+
+/**
+ * Class System
+ * @package SystemInstaller
+*/
 class System extends Step
 {
     /**
@@ -13,6 +19,10 @@ class System extends Step
         'encoding',
     ];
 
+    /**
+     * @param array $data
+     * @return mixed
+    */
     public function save(array $data)
     {
         $this->config->createArray('system');
@@ -25,6 +35,11 @@ class System extends Step
         }
     }
 
+    /**
+     * @param $data
+     *
+     * @return mixed
+    */
     private function getEncoding($data)
     {
         return !empty($data['encoding_other'])
@@ -32,6 +47,11 @@ class System extends Step
             : $data['encoding_basic'];
     }
 
+    /**
+     * @param $debug_mode
+     *
+     * @return mixed
+    */
     private function getDebugMode($debug_mode)
     {
         return var_export($debug_mode === 0, 1);

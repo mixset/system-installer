@@ -16,14 +16,23 @@
     <nav>
         <ul>
             <?php
-            echo '<li>' . (empty($_GET['step']) ?  '<span>' . Helpers::getMenu()['start'] . '</span>' : Helpers::getMenu()['start']) . '</li>';
+            echo '<li>'
+                 . (empty($_GET['step'])
+                    ?  '<span>' . \SystemInstaller\Helpers::getMenu()['start'] . '</span>'
+                    : \SystemInstaller\Helpers::getMenu()['start'])
+                 . '</li>';
 
-            foreach (Helpers::getMenu() as $key => $value):
+            foreach (\SystemInstaller\Helpers::getMenu() as $key => $value) :
                 if ($key === 'start') {
                     continue;
                 }
 
-                echo '<li>' . (isset($_GET['step']) && $_GET['step'] === $key ? '<span>' .$value. '</span>' : $value) . '</li>';
+                echo '<li>'
+                     . (isset($_GET['step']) && $_GET['step'] === $key
+                            ? '<span>' .$value. '</span>'
+                            : $value
+                     )
+                     . '</li>';
             endforeach;
             ?>
      </ul>

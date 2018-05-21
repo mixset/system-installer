@@ -1,23 +1,22 @@
 <?php
-/**
- @Author: Dominik Ryńko <http://rynko.pl/>
-*/
 
 namespace Config;
 
+use SystemInstaller\ConfigException;
+
 /**
  * Class config
- */
+*/
 class Config
 {
     /**
      * @var
-     */
+    */
     private $file;
 
     /**
      * @param $file
-     */
+    */
     public function init($file)
     {
         $this->file = $file;
@@ -27,13 +26,13 @@ class Config
      * @param $arrayName
      * @return bool
      * @throws \Exception
-     */
+    */
     public function createArray($arrayName)
     {
-         if ($this->isArrayExist($arrayName) === true) {
-             throw new \Exception('Given array name ( ' . $arrayName . ' ) already exists in a ' . $this->file);
-         } else {
-            $arrayName = '['.$arrayName.']';
+        if ($this->isArrayExist($arrayName) === true) {
+             throw new ConfigException('Given array name ( ' . $arrayName . ' ) already exists in a ' . $this->file);
+        } else {
+            $arrayName = '[' . $arrayName . ']';
 
             if (filesize($this->file) !== 0) {
                 $content = PHP_EOL . $arrayName;
@@ -41,12 +40,12 @@ class Config
                 $content = $arrayName;
             }
 
-             if (!file_put_contents($this->file, $content . PHP_EOL, FILE_APPEND)) {
-                 throw new \Exception('There was a problem with adding new data to file.');
-             } else {
-                 return true;
-             }
-         }
+            if (!file_put_contents($this->file, $content . PHP_EOL, FILE_APPEND)) {
+                throw new \Exception('There was a problem with adding new data to file.');
+            } else {
+                return true;
+            }
+        }
     }
 
     /**
@@ -58,40 +57,40 @@ class Config
     public function setConfig($name, $value)
     {
         if ($this->isKeyExist($name, $this->file)) {
-            throw new \Exception('Given key ( ' . $name . ' ) already exists in a ' . $this->file);
+            throw new ConfigException('Given key ( ' . $name . ' ) already exists in a ' . $this->file);
         } else {
-            $text = '';
+            $string = '';
 
             if (is_int($value) || is_float($value) || is_double($value)) {
-                $text .= $name . ' = ' . $value;
+                $string .= $name . ' = ' . $value;
             } elseif (is_string($value)) {
-                $text .= $name . ' = ' . '"' . $value . '"';
+                $string .= $name . ' = ' . '"' . $value . '"';
             } elseif (is_bool($value)) {
-                $text .= $name . ' = ' . ($value === true) ? "true" : "false";
+                $string .= $name . ' = ' . ($value === true) ? "true" : "false";
             }
 
-          file_put_contents($this->file, $text . PHP_EOL, FILE_APPEND);
+            file_put_contents($this->file, $string . PHP_EOL, FILE_APPEND);
         }
     }
 
     /**
-     * @param array $what
+     * @param array $search
      * @return array
      * @throws \Exception
      */
-    public function getConfig($what = [])
+    public function getConfig($search = [])
     {
         if (filesize($this->file) === 0) {
-            throw new \Exception('File ' . $this->file . ' can not be empty.');
+            throw new ConfigException('File ' . $this->file . ' can not be empty.');
         }
 
         if (!$config = parse_ini_file($this->file)) {
-            throw new \Exception('There was a problem with parsing a ini file');
+            throw new ConfigException('There was a problem with parsing a ini file');
         }
 
         $data = [];
 
-        foreach ($what as $key) {
+        foreach ($search as $key) {
             $data[] = $config[$key];
         }
 
@@ -102,7 +101,7 @@ class Config
      * @param $key
      * @param $file
      * @return bool
-     */
+    */
     private function isKeyExist($key, $file)
     {
         return array_key_exists(
@@ -114,7 +113,7 @@ class Config
     /**
      * @param $name
      * @return bool|null
-     */
+    */
     private function isArrayExist($name)
     {
         if (file_exists($this->file) && filesize($this->file) !== 0) {

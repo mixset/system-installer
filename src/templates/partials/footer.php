@@ -1,4 +1,4 @@
-</section>
-<script src="<?=ASSETS_PATH?>js/core.js"></script>
+    </section>
+    <script src="<?=ASSETS_PATH?>js/core.js"></script>
 </body>
 </html>

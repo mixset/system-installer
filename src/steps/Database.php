@@ -1,5 +1,11 @@
 <?php
 
+namespace SystemInstaller;
+
+/**
+ * Class Database
+ * @package SystemInstaller
+*/
 class Database extends Step
 {
     /**
@@ -13,9 +19,12 @@ class Database extends Step
         'user',
         'password',
         'prefix',
-
     ];
 
+    /**
+     * @param array $data
+     * @return mixed
+    */
     public function save(array $data)
     {
         $this->config->createArray('database');

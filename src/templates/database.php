@@ -11,7 +11,7 @@
             <dt>Hasło</dt>
                 <dd><input type="text" name="password" placeholder="Hasło" required></dd>
             <dt>Prefix</dt>
-                <dd><input type="text" name="prefix" value="<?= Helpers::randomCode(); ?>_" placeholder="Wpisz prefix tabel" required></dd>
+                <dd><input type="text" name="prefix" value="<?= \SystemInstaller\Helpers::randomCode(); ?>_" placeholder="Wpisz prefix tabel" required></dd>
             <dt><input type="submit" class="btn next-step" value="Przejdź do kolejnego kroku"></dt>
         </dl>
     </fieldset>

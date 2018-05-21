@@ -1,14 +1,19 @@
 <?php
 
+namespace SystemInstaller;
+
 use Config\Config;
 
+/**
+ * Class Step
+*/
 abstract class Step implements StepInterface
 {
     /**
      * Property handler for Config object
      *
      * @var
-     */
+    */
     protected $config;
 
     /**

@@ -1,5 +1,7 @@
 <?php
 
+namespace SystemInstaller;
+
 /**
  * Class StepsList
 */
@@ -10,19 +12,19 @@ class StepsList
     */
     public $steps = [
         'start'    => [
-            'class' => \Start::class,
+            'class' => Start::class,
             'label' => 'Start',
         ],
         'system'   => [
-            'class' => \System::class,
+            'class' => System::class,
             'label' => 'Ustawienia systemowe',
         ],
         'database' => [
-            'class' => \Database::class,
+            'class' => Database::class,
             'label' => 'Baza danych',
         ],
         'finish'   => [
-            'class' => \Finish::class,
+            'class' => Finish::class,
             'label' => 'Krok finalny',
         ],
     ];

@@ -1,11 +1,17 @@
 <?php
 
+namespace SystemInstaller;
+
+/**
+ * Class Router
+ * @package SystemInstaller
+*/
 class Router
 {
     /**
      * @param $step
      * @throws \Exception
-     */
+    */
     public function route($step)
     {
         $step = trim(strip_tags($step));
@@ -18,7 +24,7 @@ class Router
             if (file_exists($pathToFile) && filesize($pathToFile) !== 0) {
                 include $pathToFile;
             } else {
-                throw new \Exception('File: ' . $pathToFile . 'does not exist or is empty.');
+                throw new RouterException('File: ' . $pathToFile . 'does not exist or is empty.');
             }
         }
     }
