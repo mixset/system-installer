@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "7dc6744572452390433624f6fee1c912",
+    "content-hash": "727156296cd5751d15ebd1300cafe8c9",
     "packages": [
         {
             "name": "mixset/security-class-php",
-            "version": "v1.2.1",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mixset/config-class-php.git",
-                "reference": "4d5711c5ee4d385c5fc4993bf21928a27b31e0dc"
+                "reference": "0bac75767014097ae5a8dd1e720475547ca722ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mixset/config-class-php/zipball/4d5711c5ee4d385c5fc4993bf21928a27b31e0dc",
-                "reference": "4d5711c5ee4d385c5fc4993bf21928a27b31e0dc",
+                "url": "https://api.github.com/repos/mixset/config-class-php/zipball/0bac75767014097ae5a8dd1e720475547ca722ab",
+                "reference": "0bac75767014097ae5a8dd1e720475547ca722ab",
                 "shasum": ""
             },
             "require": {
@@ -44,7 +44,7 @@
                 "ini",
                 "php"
             ],
-            "time": "2018-06-01T18:34:59+00:00"
+            "time": "2018-06-02T11:48:38+00:00"
         }
     ],
     "packages-dev": [
