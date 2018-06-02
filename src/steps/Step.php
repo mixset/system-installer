@@ -1,8 +1,8 @@
 <?php
 
-namespace SystemInstaller;
+namespace SystemInstaller\Step;
 
-use Config\Config;
+use Mixset\ConfigManager\Config;
 
 /**
  * Class Step
@@ -22,6 +22,7 @@ abstract class Step implements StepInterface
     public function __construct()
     {
         $this->config = new Config();
-        $this->config->init(CONFIG_PATH . CONFIG_FILE);
+        $this->config->setPath(CONFIG_PATH . CONFIG_FILE);
+        $this->config->init();
     }
 }

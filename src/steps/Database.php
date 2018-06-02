@@ -1,6 +1,6 @@
 <?php
 
-namespace SystemInstaller;
+namespace SystemInstaller\Step;
 
 /**
  * Class Database
@@ -27,10 +27,10 @@ class Database extends Step
     */
     public function save(array $data)
     {
-        $this->config->createArray('database');
+        $this->config->setArray('database');
 
         foreach ($this->fields as $value) {
-            $this->config->setConfig($value, $data[$value]);
+            $this->config->set($value, $data[$value]);
         }
     }
 }

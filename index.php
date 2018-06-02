@@ -15,12 +15,24 @@ define('ASSETS_PATH', TEMPLATES_PATH . 'assets/');
 define('APP_PHP', '.php');
 define('CONFIG_FILE', 'config.ini');
 
-function __autoload($className)
-{
-    $className = explode('\\', $className);
-    $className = array_pop($className);
+spl_autoload_register(function ($className) {
 
-    require_once CORE_PATH . $className . APP_PHP;
-}
+    $ds = DIRECTORY_SEPARATOR;
+    $dir = __DIR__;
+
+    $className = lcfirst(str_replace('\\', $ds, $className));
+    $explode = explode('\\', $className);
+    array_shift($explode);
+    $path = implode('/', $explode);
+    $path = lcfirst($path);
+
+    $file = "{$dir}{$ds}src/{$path}.php";
+
+    if (is_readable($file)) {
+        require_once $file;
+    }
+});
+
+require_once 'vendor/autoload.php';
 
 require_once SRC_PATH . 'index' . APP_PHP;

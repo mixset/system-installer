@@ -1,6 +1,6 @@
 <?php
 
-namespace SystemInstaller;
+namespace SystemInstaller\Step;
 
 /**
  * Interface StepInterface

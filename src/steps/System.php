@@ -1,6 +1,6 @@
 <?php
 
-namespace SystemInstaller;
+namespace SystemInstaller\Step;
 
 /**
  * Class System
@@ -25,13 +25,13 @@ class System extends Step
     */
     public function save(array $data)
     {
-        $this->config->createArray('system');
+        $this->config->setArray('system');
 
         $data['debug_mode'] = $this->getDebugMode($data['debug_mode']);
         $data['encoding'] = $this->getEncoding($data);
 
         foreach ($this->fields as $value) {
-            $this->config->setConfig($value, $data[$value]);
+            $this->config->set($value, $data[$value]);
         }
     }
 
