@@ -1,8 +1,8 @@
 <?php
 
-use SystemInstaller\Installer;
-use SystemInstaller\InstallerException;
-use SystemInstaller\Router;
+use SystemInstaller\Core\Installer;
+use SystemInstaller\Core\Router;
+use SystemInstaller\Exceptions\InstallerException;
 
 include_once PARTIALS_PATH . 'header.php';
 
@@ -14,8 +14,9 @@ try {
     $installer->installManager();
 
     (new Router())->route($currentStep);
-} catch (InstallerException $e) {
-    echo '<h2 style="text-align:center;">'.$e -> getMessage().'</h2>';
+} catch (Exception $e) {
+    echo '<p style="text-align: center">Error occured. Check error logs for more details.</p>';
+    error_log($e -> getMessage());
 }
 
 include_once PARTIALS_PATH . 'footer.php';

@@ -1,6 +1,8 @@
 <?php
 
-namespace SystemInstaller;
+namespace SystemInstaller\Core;
+
+use SystemInstaller\Exceptions\RouterException;
 
 /**
  * Class Router

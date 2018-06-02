@@ -1,3 +1,6 @@
+<?php
+use SystemInstaller\Core\Helpers;
+?>
 <form action="step-finish" method="POST">
     <fieldset>
         <legend>Połączenie się z bazą danych</legend>
@@ -9,9 +12,9 @@
             <dt>Nazwa użytkownika</dt>
                 <dd><input type="text" name="user" placeholder="Nazwa użytkownika" required></dd>
             <dt>Hasło</dt>
-                <dd><input type="text" name="password" placeholder="Hasło" required></dd>
+                <dd><input type="text" name="password" placeholder="Hasło" value="<?= Helpers::randomCode(10); ?>" required></dd>
             <dt>Prefix</dt>
-                <dd><input type="text" name="prefix" value="<?= \SystemInstaller\Helpers::randomCode(); ?>_" placeholder="Wpisz prefix tabel" required></dd>
+                <dd><input type="text" name="prefix" value="<?= Helpers::randomCode(); ?>_" placeholder="Wpisz prefix tabel" required></dd>
             <dt><input type="submit" class="btn next-step" value="Przejdź do kolejnego kroku"></dt>
         </dl>
     </fieldset>

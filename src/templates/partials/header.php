@@ -1,9 +1,12 @@
+<?php
+use SystemInstaller\Core\Helpers;
+?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
     <title>Instalator systemu</title>
-    <link rel="stylesheet" href="<?=ASSETS_PATH?>css/style.css">
+    <link rel="stylesheet" href="<?= ASSETS_PATH ?>css/style.css">
 </head>
 <body>
 <header class="header">
@@ -18,11 +21,11 @@
             <?php
             echo '<li>'
                  . (empty($_GET['step'])
-                    ?  '<span>' . \SystemInstaller\Helpers::getMenu()['start'] . '</span>'
-                    : \SystemInstaller\Helpers::getMenu()['start'])
+                    ?  '<span>' . Helpers::getMenu()['start'] . '</span>'
+                    : Helpers::getMenu()['start'])
                  . '</li>';
 
-            foreach (\SystemInstaller\Helpers::getMenu() as $key => $value) :
+            foreach (Helpers::getMenu() as $key => $value) :
                 if ($key === 'start') {
                     continue;
                 }

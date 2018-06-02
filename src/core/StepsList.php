@@ -1,6 +1,11 @@
 <?php
 
-namespace SystemInstaller;
+namespace SystemInstaller\Core;
+
+use SystemInstaller\Step\Database;
+use SystemInstaller\Step\Finish;
+use SystemInstaller\Step\Start;
+use SystemInstaller\Step\System;
 
 /**
  * Class StepsList

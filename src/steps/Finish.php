@@ -1,6 +1,6 @@
 <?php
 
-namespace SystemInstaller;
+namespace SystemInstaller\Step;
 
 /**
  * Class Finish
@@ -9,6 +9,6 @@ class Finish extends Step
 {
     public function save(array $data)
     {
-        // No action for this step
+        unset($_SESSION['init_app']);
     }
 }
