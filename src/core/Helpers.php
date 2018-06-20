@@ -2,6 +2,8 @@
 
 namespace SystemInstaller\Core;
 
+use SystemInstaller\Dictionary\StepDictionary;
+
 /**
  * Class Helpers
  * @package SystemInstaller
@@ -11,7 +13,7 @@ class Helpers
     /**
      * Return array with data about current step
      * @return array
-     */
+    */
     public static function getPathData()
     {
         $url = explode('/', parse_url($_SERVER['HTTP_REFERER'])['path']);
@@ -23,7 +25,7 @@ class Helpers
     /**
      * @param int $length
      * @return string
-     */
+    */
     public static function randomCode($length = 8)
     {
         list($uSec, $sec) = explode(' ', microtime());
@@ -39,6 +41,7 @@ class Helpers
             $code .= $actChar;
             $counter++;
         }
+
         return $code;
     }
 
@@ -47,7 +50,7 @@ class Helpers
     */
     public static function getMenu()
     {
-        $stepsList = (new StepsList())->steps;
+        $stepsList = (new StepDictionary())->steps;
 
         $menuItems = [];
 

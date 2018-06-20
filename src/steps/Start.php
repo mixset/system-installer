@@ -8,6 +8,10 @@ namespace SystemInstaller\Step;
 */
 class Start extends Step
 {
+    /**
+     * @param array $data
+     * @return mixed|void
+    */
     public function save(array $data)
     {
         // No action for this step

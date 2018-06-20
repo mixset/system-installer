@@ -2,11 +2,13 @@
 
 namespace SystemInstaller\Exceptions;
 
+use Exception;
+
 /**
  * Class RouterException
  * @package SystemInstaller
 */
-class RouterException extends \Exception
+class RouterException extends Exception
 {
-    // Your exception here
+    // Custom exception here
 }
