@@ -1,6 +1,6 @@
 <?php
 
-namespace SystemInstaller\Core;
+namespace SystemInstaller\Dictionary;
 
 use SystemInstaller\Step\Database;
 use SystemInstaller\Step\Finish;
@@ -10,17 +10,17 @@ use SystemInstaller\Step\System;
 /**
  * Class StepsList
 */
-class StepsList
+class StepDictionary
 {
     /**
      * @var array
     */
     public $steps = [
-        'start'    => [
+        'start' => [
             'class' => Start::class,
             'label' => 'Start',
         ],
-        'system'   => [
+        'system' => [
             'class' => System::class,
             'label' => 'Ustawienia systemowe',
         ],
