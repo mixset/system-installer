@@ -2,25 +2,27 @@
 
 namespace SystemInstaller\Core;
 
+use SystemInstaller\Dictionary\StepDictionary;
+
 require_once STEPS_PATH . 'StepInterface' . APP_PHP;
 require_once STEPS_PATH . 'Step' . APP_PHP;
 
 /**
  * Class Installer
  * @package Installer
- */
+*/
 class Installer
 {
     /**
      * Steps of install form
      *
      * @var array
-     */
+    */
     public $steps = [];
 
     /**
      * Installer constructor.
-     */
+    */
     public function __construct()
     {
         $this->initFile();
@@ -29,17 +31,17 @@ class Installer
 
     /**
      * Load array with steps of installer
-     */
+    */
     public function loadSteps()
     {
-        $this->steps = (new StepsList())->steps;
+        $this->steps = (new StepDictionary())->steps;
     }
 
     /**
      * Perform save action of given class from current step
      *
      * @return mixed
-     */
+    */
     public function installManager()
     {
         if (empty($_POST) === false && (int)$_POST['request'] === 1) {
@@ -55,7 +57,7 @@ class Installer
      * Create directory and config.ini, if not present
      *
      * @return bool
-     */
+    */
     private function initFile()
     {
         $dir = CONFIG_PATH;
