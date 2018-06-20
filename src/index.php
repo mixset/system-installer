@@ -2,7 +2,6 @@
 
 use SystemInstaller\Core\Installer;
 use SystemInstaller\Core\Router;
-use SystemInstaller\Exceptions\InstallerException;
 
 include_once PARTIALS_PATH . 'header.php';
 
@@ -15,7 +14,7 @@ try {
 
     (new Router())->route($currentStep);
 } catch (Exception $e) {
-    echo '<p style="text-align: center">Error occured. Check error logs for more details.</p>';
+    echo '<p style="text-align:center;">Error occured. Check error logs for more details.</p>';
     error_log($e -> getMessage());
 }
 
